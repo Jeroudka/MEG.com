@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEG Background Hover Effect</title>
+    <style>
+        /* General Styles */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: white;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .meg-container {
+            display: flex;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .meg-container span {
+            padding: 0 10px;
+            cursor: pointer;
+            transition: color 1s ease;
+        }
+
+        footer {
+            position: absolute;
+            bottom: 10px;
+            text-align: center;
+            width: 100%;
+            font-size: 1rem;
+            color: black;
+            transition: color 1s ease;
+        }
+
+        /* Responsive Font Sizes */
+        @media (max-width: 768px) {
+            .meg-container {
+                font-size: 5rem; /* Smaller font size for tablets */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .meg-container {
+                font-size: 3rem; /* Even smaller font size for mobile phones */
+                flex-direction: column; /* Stack letters vertically on small screens */
+            }
+
+            .meg-container span {
+                padding: 10px 0; /* Add vertical spacing between stacked letters */
+            }
+
+            footer {
+                font-size: 0.8rem; /* Smaller footer text for mobile */
+            }
+        }
+
+        @media (min-width: 769px) {
+            .meg-container {
+                font-size: 10rem; /* Large font size for desktops */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="meg-container">
+        <span onmouseover="changeBackground('pink', 'black')" onmouseout="resetBackground()">M</span>
+        <span onmouseover="changeBackground('black', 'white')" onmouseout="resetBackground()">E</span>
+        <span onmouseover="changeBackground('red', 'black')" onmouseout="resetBackground()">G</span>
+    </div>
+    <footer>
+        <p>Created by Megan's Valentine Jerrold</p>
+    </footer>
+
+    <script>
+        function changeBackground(bgColor, textColor) {
+            document.body.style.backgroundColor = bgColor;
+            document.body.style.color = textColor;
+        }
+
+        function resetBackground() {
+            document.body.style.backgroundColor = 'white';
+            document.body.style.color = 'black';
+        }
+    </script>
+</body>
+</html>
